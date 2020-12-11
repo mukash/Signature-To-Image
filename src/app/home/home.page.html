@@ -1,20 +1,36 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar class="header-tool-bar">
+    <ion-title> Signature To Image </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content class="ion-padding content-sign">
+  <div class="signature-pad">
+    <ion-card>
+      <canvas
+        class="signature-pad-canvas"
+        #canvas
+        width="900"
+        height="800"
+        style="touch-action: none"
+      ></canvas>
+    </ion-card>
   </div>
 </ion-content>
+<ion-footer class="footer-main">
+  <div class="btn-wrapper">
+    <ion-buttons>
+      <div class="btns-main">
+        <ion-button expand="full" [disabled]="isCanvasBlank()" (click)="save()">
+          Save</ion-button
+        >
+      </div>
+      <div class="btns-main">
+        <ion-button expand="full" (click)="undo()"> Undo</ion-button>
+      </div>
+      <div class="btns-main">
+        <ion-button expand="full" (click)="clear()"> Clear</ion-button>
+      </div>
+    </ion-buttons>
+  </div>
+</ion-footer>

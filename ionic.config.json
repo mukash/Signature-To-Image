@@ -1,5 +1,7 @@
 {
   "name": "SignatureToImage",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
